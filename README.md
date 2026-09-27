@@ -24,12 +24,12 @@ The 5 feature cards under “Total control, remarkably simple” use the heading
 
 ## Hero videos
 
-Five supplied clips rotate in the center card. Each is retimed to exactly 10 seconds (300 frames at 30 fps), muted, and optimized to at most 1280 pixels wide. Side cards show two distinct frames from that same original clip. Prompts and the dithered gradient change with each clip. Playback pauses offscreen, in background tabs, and via the video button; reduced-motion preferences disable autoplay.
+Five supplied clips rotate in the center card. Each is retimed to exactly 10 seconds (300 frames at 30 fps), muted, and optimized to at most 1280 pixels wide. Side cards show two distinct frames from that same original clip. Prompts and the dithered gradient change with each clip. Playback pauses offscreen, in background tabs; reduced-motion preferences disable autoplay.
 
 | Scene | Original file | Original duration | Playback speed | Side-frame timestamps |
 | --- | --- | --- | --- | --- |
 | Product | final_combined_10s.mp4 | 10.02 s | 1.00× | 1.5 s / 8.1 s |
-| Fashion | final_walk_showcase_v2.mp4 | 24.25 s | 2.43× | 11.8 s / 20.5 s |
+| Fashion | final_walk_showcase_v2.mp4 | 24.25 s | 2.43× | 9 s / 20.5 s |
 | Animation | pixar animation.mp4 | 29.79 s | 2.98× | 4.5 s / 24 s |
 | Motion control | side_by_side_16x9.mp4 | 9.87 s | 0.99× | 2 s / 7 s |
 | UGC | video-9i9aucebe6.mp4 | 15.09 s | 1.51× | 1.6 s / 12 s |

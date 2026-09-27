@@ -1,7 +1,5 @@
 .video-hero .shot video{display:block;width:100%;height:100%;object-fit:contain;border-radius:4px;background:#111}
 .video-hero .scene.incoming,.video-hero .scene.outgoing,.video-hero .color-wash.incoming{animation-duration:.55s}
-.video-hero .hero-playback{position:absolute;right:14px;top:14px;z-index:6;pointer-events:auto;border:1px solid #ffffff60;border-radius:20px;background:#111b;color:#fff;padding:8px 14px;font:500 13px/1.2 Satoshi,sans-serif;cursor:pointer;backdrop-filter:blur(6px)}
-.video-hero .hero-playback:focus-visible{outline:3px solid white;outline-offset:3px}
 .video-hero .shot.center::after{opacity:.04}
 .video-hero .prompt-text{white-space:normal;line-height:21px}
-@media(max-width:700px){.video-hero .prompt-text{font-size:28px;line-height:34px}.video-hero .hero-playback{font-size:25px;padding:12px 20px;right:18px;top:18px}}
+@media(max-width:700px){.video-hero .prompt-text{font-size:28px;line-height:34px}}
