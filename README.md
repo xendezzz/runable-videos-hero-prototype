@@ -35,3 +35,7 @@ Five supplied clips rotate in the center card. Each is retimed to exactly 10 sec
 | UGC | video-9i9aucebe6.mp4 | 15.09 s | 1.51× | 1.6 s / 12 s |
 
 Media lives in `dist/assets/hero-videos`; scene prompts and colors are configured in `dist/index.html`. Original source videos are unchanged.
+
+## Starting-point showcase
+
+The five category previews use the supplied Product ads, Brand stories, Explainers, Social clips, and 3D animation clips in `dist/assets/showcase-videos`. Original clip durations are preserved. Desktop and mobile previews loop silently while selected and visible, pause in background tabs, and show extracted posters when reduced motion is enabled.
