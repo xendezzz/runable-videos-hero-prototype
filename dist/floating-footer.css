@@ -2,8 +2,8 @@
 .footer-stage{position:relative;min-height:760px;height:min(850px,90vh);display:grid;place-items:center;overflow:hidden}
 .footer-templates{position:absolute;inset:0;pointer-events:none}
 .footer-float{position:absolute;width:clamp(180px,23vw,350px);transform:translate3d(var(--px,0px),var(--py,0px),0) rotate(var(--angle,0deg));transition:transform .65s cubic-bezier(.2,.7,.2,1);will-change:transform}
-.footer-float img{display:block;width:100%;height:auto;aspect-ratio:1200/680;object-fit:cover;border-radius:8px;border:1px solid #ffffff26;opacity:1;box-shadow:0 22px 50px #0008;animation:footer-drift 9s ease-in-out infinite alternate;animation-delay:var(--delay,0s);animation-play-state:paused}
-.floating-footer.is-in-view .footer-float img{animation-play-state:running}
+.footer-float :is(img,video){display:block;width:100%;height:auto;aspect-ratio:1200/680;object-fit:cover;border-radius:8px;border:1px solid #ffffff26;opacity:1;box-shadow:0 22px 50px #0008;animation:footer-drift 9s ease-in-out infinite alternate;animation-delay:var(--delay,0s);animation-play-state:paused}
+.floating-footer.is-in-view .footer-float :is(img,video){animation-play-state:running}
 .footer-float:nth-child(1){left:-5%;top:27%;--angle:-10deg;--delay:-3s}
 .footer-float:nth-child(2){left:18%;top:3%;width:clamp(170px,20vw,285px);--angle:8deg;--delay:-5s}
 .footer-float:nth-child(3){right:-4%;top:9%;--angle:9deg;--delay:-1s}
@@ -24,7 +24,7 @@
 .footer-bottom .footer-wordmark{font-size:25px;font-weight:700;letter-spacing:-1px;color:#fff}.footer-bottom>span{margin-right:auto}
 @keyframes footer-drift{from{transform:translateY(-9px) rotate(-1deg)}to{transform:translateY(9px) rotate(1deg)}}
 @media(max-width:700px){.footer-stage{height:740px;min-height:0}.footer-invitation{width:100%;padding:42px 16px}.footer-invitation h2{font-size:48px}.footer-float{width:190px}.footer-float:nth-child(1){left:-55px;top:7%}.footer-float:nth-child(2){left:auto;right:-20px;top:3%;width:180px}.footer-float:nth-child(3),.footer-float:nth-child(4){display:none}.footer-float:nth-child(5){left:-35px;bottom:7%}.footer-float:nth-child(6){right:-25px;bottom:3%;width:185px}.footer-bottom{flex-wrap:wrap;gap:20px}.footer-bottom>span{width:calc(100% - 125px);margin-right:0}}
-@media(prefers-reduced-motion:reduce){.footer-float{transform:rotate(var(--angle));transition:none;will-change:auto}.footer-float img{animation:none}.footer-build,.footer-build span{transition:none}}
+@media(prefers-reduced-motion:reduce){.footer-float{transform:rotate(var(--angle));transition:none;will-change:auto}.footer-float :is(img,video){animation:none}.footer-build,.footer-build span{transition:none}}
 /* Upright previews flowing over an arch, matching the video reference. */
 .footer-stage{height:760px;min-height:0;display:block}
 .footer-invitation{position:static;max-width:none;padding:76px 24px 0;background:none;text-align:center}
@@ -37,7 +37,7 @@
 .footer-templates::before{left:0;background:linear-gradient(to right,#101010,#101010c0 30%,#10101000)}
 .footer-templates::after{right:0;background:linear-gradient(to left,#101010,#101010c0 30%,#10101000)}
 .footer-templates .footer-float:nth-child(n){display:block;left:50%;right:auto;top:0;bottom:auto;width:clamp(250px,25vw,380px);transition:none;transform-origin:top center;will-change:transform}
-.footer-float img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;background:#181818;border:0;border-radius:8px;animation:none;box-shadow:0 14px 32px #0005}
+.footer-float :is(img,video){width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;background:#181818;border:0;border-radius:8px;animation:none;box-shadow:0 14px 32px #0005}
 .footer-build{position:relative;z-index:150;top:auto;left:auto;display:inline-flex;align-items:center;gap:8px;transform:none;margin-top:26px;padding:8px 20px;min-height:45px;color:#171717;background:#fff;border:2px solid #171717;border-radius:8px;box-shadow:0 6px 18px rgba(255,255,255,.09);backdrop-filter:none;font:400 16px/24px Satoshi,Arial,sans-serif;letter-spacing:-.1px;white-space:nowrap}
 .footer-build:hover{background:#f1f1f1}
 @media(min-width:1600px){

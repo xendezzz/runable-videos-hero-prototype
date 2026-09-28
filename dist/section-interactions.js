@@ -64,7 +64,7 @@
   const states=new Map();
   const visibleThreshold=.3;
   function sync(video,state) {
-    const shouldPlay=state.active&&!state.finished&&state.visible&&!document.hidden&&!reduced.matches;
+    const shouldPlay=state.active&&state.visible&&!document.hidden&&!reduced.matches;
     if(shouldPlay)video.play().catch(()=>{});
     else video.pause();
   }
@@ -72,7 +72,7 @@
     const video=card.querySelector('video');
     const state={visible:false,active:card.classList.contains('is-active'),finished:false};
     states.set(video,state);
-    video.loop=false;
+    video.loop=true;
     video.pause();
     video.addEventListener('ended',()=>{state.finished=true});
     new MutationObserver(()=>{

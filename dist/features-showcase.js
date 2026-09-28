@@ -2,7 +2,7 @@
   const section=document.querySelector('#customization');
   const track=document.querySelector('#feature-track');
   const cards=[...track.querySelectorAll('.feature-card')];
-  // Demo media will be supplied in the asset pass.
+  // Supplied feature videos follow the selected card.
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   let active=-1,pending=0,distance=0,movement=1;
   const compact=()=>innerWidth<=900||innerHeight<700||reduced.matches;

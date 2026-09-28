@@ -1,17 +1,16 @@
 (() => {
-  return; // Grey preview only until demo media is supplied.
   const frame=document.querySelector('#process-video');
   const video=document.querySelector('#process-video-media');
   const play=document.querySelector('#process-center-play');
   const reduce=matchMedia('(prefers-reduced-motion: reduce)');
-  const poster='assets/process-speaker-poster.png';
+  const poster='assets/video-making-tutorial-poster.jpg';
   video.poster=poster;
   const cover=document.createElement('img');
-  cover.src=poster;cover.alt='Video demo placeholder';cover.className='demo-cover';cover.loading='lazy';cover.decoding='async';
+  cover.src=poster;cover.alt='AI video making tutorial';cover.className='demo-cover';cover.loading='lazy';cover.decoding='async';
   frame.append(cover);
-  play.setAttribute('aria-label','Video preview coming soon');
+  play.setAttribute('aria-label','Play tutorial');
   const dialog=document.createElement('dialog');dialog.className='demo-dialog';dialog.setAttribute('aria-labelledby','demo-title');
-  dialog.innerHTML='<div class="demo-dialog-inner"><div class="demo-dialog-header"><span id="demo-title">Video preview coming soon</span><button class="demo-close" type="button" aria-label="Close video">×</button></div><div class="demo-stage"></div></div>';
+  dialog.innerHTML='<div class="demo-dialog-inner"><div class="demo-dialog-header"><span id="demo-title">AI video making tutorial</span><button class="demo-close" type="button" aria-label="Close video">×</button></div><div class="demo-stage"></div></div>';
   document.body.append(dialog);
   const inner=dialog.querySelector('.demo-dialog-inner'),stage=dialog.querySelector('.demo-stage'),closeButton=dialog.querySelector('.demo-close');
   let placeholder,returnFocus,scrollStyle,closing=false;
@@ -55,7 +54,7 @@
     closing=true;video.pause();
     if(!reduce.matches){const from=frame.getBoundingClientRect(),to=placeholder.getBoundingClientRect();const animation=frame.animate([{transform:'none',transformOrigin:'top left',filter:'blur(0)'},{transform:`translate(${to.left-from.left}px,${to.top-from.top}px) scale(${to.width/from.width},${to.height/from.height})`,transformOrigin:'top left',filter:'blur(2px)'}],{duration:420,easing:'cubic-bezier(.22,1,.36,1)',fill:'forwards'});try{await animation.finished}catch{}animation.cancel()}
     dialog.close();placeholder.replaceWith(frame);frame.classList.remove('in-demo-dialog','has-inline-playback');video.controls=false;
-    document.body.style.overflow=scrollStyle;play.setAttribute('aria-label','Video preview coming soon');
+    document.body.style.overflow=scrollStyle;play.setAttribute('aria-label','Play tutorial');
     if(returnFocus?.isConnected)returnFocus.focus({preventScroll:true});
     closing=false;
   }

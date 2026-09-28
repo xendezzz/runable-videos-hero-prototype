@@ -1,0 +1,12 @@
+/* Keep the restored image backdrops visible in every interaction state. */
+.mobile-showcase .device-media::before,
+.mobile-showcase .device-card:hover .device-media::before,
+.mobile-showcase .device-card:focus-within .device-media::before{display:block;opacity:1;filter:none;background-image:var(--manage-backdrop);background-size:cover;background-position:center}
+.mobile-showcase .device-media::after{opacity:.035}
+
+/* Render the UI at its final layout size rather than enlarging a GPU texture. */
+.mobile-showcase .device-media::after{display:none;animation:none}
+.mobile-showcase .device-media{transform:none!important;backdrop-filter:none}
+.mobile-showcase .device-media .device-ui-image{filter:none;will-change:auto;transform:none;image-rendering:auto;box-shadow:0 12px 28px #172c3620}
+.mobile-showcase .device-mobile .device-ui-image{height:calc(65% * var(--manage-phone-scale,1));max-width:calc(65% * var(--manage-phone-scale,1));width:auto}
+.mobile-showcase .device-desktop .device-ui-image{width:calc((100% - 32px) * var(--manage-desktop-scale,1));height:auto;max-width:calc(100% - 32px);max-height:calc(93% * var(--manage-desktop-scale,1))}

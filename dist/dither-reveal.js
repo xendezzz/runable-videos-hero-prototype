@@ -86,7 +86,7 @@
   function frame(now) {
     raf=0; ctx.clearRect(0,0,innerWidth,innerHeight);
     for(const [el,state] of active) {
-      const p=Math.min(1,Math.max(0,(now-state.start)/1250));
+      const p=Math.min(1,Math.max(0,(now-state.start)/(1250*state.strength)));
       const box=el.getBoundingClientRect();
       if(p>=1||box.bottom<0||box.top>innerHeight+100) {finish(el);continue;}
       const mask=Math.min(16,Math.floor(Math.max(0,(p-.2)/.65)*16));
@@ -94,9 +94,9 @@
       for(const dot of state.points) {
         const t=Math.max(0,Math.min(1,(p-dot.delay)/.7));
         const scatter=Math.pow(1-t,2.5);
-        ctx.globalAlpha=Math.min(1,p*7)*Math.max(0,1-Math.max(0,p-.55)/.35)*.85;
+        ctx.globalAlpha=Math.min(1,p*7)*Math.max(0,1-Math.max(0,p-.55)/.35)*.85*state.strength;
         ctx.fillStyle=dot.color;
-        ctx.fillRect(box.left+dot.x+dot.dx*scatter,box.top+dot.y+dot.dy*scatter,dot.size,dot.size);
+        ctx.fillRect(box.left+dot.x+dot.dx*scatter*state.strength,box.top+dot.y+dot.dy*scatter*state.strength,dot.size,dot.size);
       }
     }
     ctx.globalAlpha=1;
@@ -110,7 +110,7 @@
       const points=active.size<5 ? sample(el) : [];
       pending.delete(el); observer.unobserve(el);
       el.classList.replace('dither-pending','dither-entering');
-      active.set(el,{points,start:performance.now()+Math.min(index*65,195),mask:-1});
+      active.set(el,{points,strength:el.matches('.feature-card')?.25:1,start:performance.now()+Math.min(index*65,195),mask:-1});
       if(!raf) raf=requestAnimationFrame(frame);
     } catch {finish(el);}
   }

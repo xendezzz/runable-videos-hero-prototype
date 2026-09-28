@@ -2,10 +2,11 @@
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),fine=matchMedia('(hover:hover) and (pointer:fine)');
  // Tilt media containers, composing with existing scroll scales instead of replacing them.
  document.querySelectorAll('.feature-card,.device-media').forEach(card=>{
+  const tilt=card.matches('.feature-card')?1.15:4.6;
   let raf=0,rect=null,x=0,y=0;
   const reset=()=>{cancelAnimationFrame(raf);raf=0;rect=null;card.style.removeProperty('--media-rx');card.style.removeProperty('--media-ry')};
   card.addEventListener('pointerenter',()=>{rect=card.getBoundingClientRect()});
-  card.addEventListener('pointermove',event=>{if(!fine.matches||reduced.matches||event.buttons)return;rect ||= card.getBoundingClientRect();x=Math.max(-1,Math.min(1,(event.clientX-rect.left)/rect.width*2-1));y=Math.max(-1,Math.min(1,(event.clientY-rect.top)/rect.height*2-1));if(!raf)raf=requestAnimationFrame(()=>{card.style.setProperty('--media-rx',(-y*4.6)+'deg');card.style.setProperty('--media-ry',(x*4.6)+'deg');raf=0})});
+  card.addEventListener('pointermove',event=>{if(!fine.matches||reduced.matches||event.buttons)return;rect ||= card.getBoundingClientRect();x=Math.max(-1,Math.min(1,(event.clientX-rect.left)/rect.width*2-1));y=Math.max(-1,Math.min(1,(event.clientY-rect.top)/rect.height*2-1));if(!raf)raf=requestAnimationFrame(()=>{card.style.setProperty('--media-rx',(-y*tilt)+'deg');card.style.setProperty('--media-ry',(x*tilt)+'deg');raf=0})});
   card.addEventListener('pointerleave',reset);card.addEventListener('pointercancel',reset);reduced.addEventListener('change',reset);addEventListener('resize',reset);
  });
  const track=document.querySelector('#feature-track'),section=document.querySelector('#customization');

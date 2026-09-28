@@ -2,7 +2,7 @@
 
 Copy variant of https://github.com/xendezzz/runable-websites-hero-prototype at `339109858c91a749105f44d81ebe49002eb3a647`.
 
-The original layout, typography, section order, responsive rules and motion are retained. Copy is tailored to video generation. The hero uses five supplied videos and extracted still frames. Other showcase artwork and demo clips remain grey placeholders with the original media dimensions. Brand marks, icons and fonts are retained. Usage metrics are unverified placeholders (—); pricing is inherited from the source and should be confirmed before launch.
+The original layout, typography, section order, responsive rules and motion are retained. Copy is tailored to video generation. The hero uses five supplied videos and extracted still frames. Other showcase artwork and demo clips remain grey placeholders with the original media dimensions. Brand marks, icons and fonts are retained. Usage metrics are sample placeholders (25,000+ creators and teams, 150,000+ videos, 120+ countries); pricing is inherited from the source and should be confirmed before launch.
 
 ## Preview
 
@@ -14,7 +14,7 @@ Open http://localhost:8000. No build step or dependency installation is required
 
 ## Integration
 
-This remains a marketing prototype. Generation, authentication, checkout and downloads are not connected. The source keeps a separate, unwired `hero-builder.js` integration helper. Its legacy event and selector IDs are retained for compatibility; the landing page CTAs remain prototype controls. The demo player is disabled until media is supplied. Replace media files under `dist/assets`, restore video sources and remove `dist/placeholders.css` when real assets are ready.
+This remains a marketing prototype. Generation, authentication, checkout and downloads are not connected. The source keeps a separate, unwired `hero-builder.js` integration helper. Its legacy event and selector IDs are retained for compatibility; the landing page CTAs remain prototype controls. The tutorial player uses the supplied AI Video Making Tutorial with its original audio and duration. Replace media files under `dist/assets`, restore video sources and remove `dist/placeholders.css` when real assets are ready.
 
 The original hosting project ID and canonical URL are deliberately omitted so this repository cannot overwrite the source site. Configure a separate deployment when ready.
 
@@ -39,3 +39,7 @@ Media lives in `dist/assets/hero-videos`; scene prompts and colors are configure
 ## Starting-point showcase
 
 The five category previews use the supplied Product ads, Brand stories, Explainers, Social clips, and 3D animation clips in `dist/assets/showcase-videos`. Original clip durations are preserved. Desktop and mobile previews loop silently while selected and visible, pause in background tabs, and show extracted posters when reduced motion is enabled.
+
+## Feature card videos
+
+The five cards under Total control use the supplied eight-second Text to Video, Image to Video, Video Remix, Multi-Model, and AI Audio clips in `dist/assets/feature-videos`. Original dimensions and duration are preserved. Only the selected visible card plays, muted and looping. Inactive cards and background tabs pause; reduced-motion users see a still poster.

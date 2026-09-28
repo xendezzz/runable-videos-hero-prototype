@@ -11,8 +11,8 @@
 .mobile-showcase .device-media::before,.mobile-showcase .dither-motion{display:none;animation:none}
 .mobile-showcase .device-mobile,.mobile-showcase .device-desktop{display:flex;align-items:center;justify-content:center;height:var(--manage-panel-height,460px);aspect-ratio:auto}
 .mobile-showcase .device-media{position:relative;isolation:isolate;background:#ededed}
-.mobile-showcase .device-mobile{--manage-backdrop:url('assets/manage/manage-sage-anime.png')}
-.mobile-showcase .device-desktop{--manage-backdrop:url('assets/manage/manage-blue-anime.png')}
+.mobile-showcase .device-mobile{--manage-backdrop:url('assets/manage/video-sage-background.png')}
+.mobile-showcase .device-desktop{--manage-backdrop:url('assets/manage/video-blue-background.png')}
 .mobile-showcase .device-media::before{content:"";display:block;position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(#ffffff2e,#ffffff2e),var(--manage-backdrop) center/cover no-repeat;filter:saturate(.9) contrast(1.02);transform:none;animation:none}
 .mobile-showcase .device-media::after{content:"";position:absolute;inset:-2px;z-index:3;pointer-events:none;opacity:.14;mix-blend-mode:normal;background:repeating-conic-gradient(#000 0% 25%,transparent 0% 50%) 0 0/2px 2px;animation:manage-dither .8s steps(1,end) infinite}
 @keyframes manage-dither{0%,100%{transform:translate(0,0)}25%{transform:translate(1px,0)}50%{transform:translate(1px,1px)}75%{transform:translate(0,1px)}}

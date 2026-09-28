@@ -1,0 +1,12 @@
+/* Feature media effects at one quarter of their original strength. */
+.features .feature-card::before{opacity:.035}
+.features .feature-card::after{opacity:.25}
+.features .feature-card video{filter:blur(.375px);transform:scale(1.0025)}
+.features .feature-card.is-active video{filter:blur(0)}
+.features .feature-card{transform:scale(.9925)}
+.features .feature-card.is-active{transform:scale(1.00625)}
+@media(hover:hover) and (pointer:fine){
+ .features .feature-card{transform:perspective(1200px) rotateX(var(--media-rx,0deg)) rotateY(var(--media-ry,0deg)) scale(.9925)}
+ .features .feature-card.is-active{transform:perspective(1200px) rotateX(var(--media-rx,0deg)) rotateY(var(--media-ry,0deg)) scale(1.00625)}
+}
+@media(prefers-reduced-motion:reduce){.features .feature-card,.features .feature-card.is-active{transform:none}}
